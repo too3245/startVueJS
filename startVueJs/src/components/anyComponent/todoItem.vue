@@ -1,7 +1,7 @@
 <template>
-    <div id="todo-list-app2">
+    <div id="todo-list-app">
         <ol>
-            <todo-item v-for="item in groceryList" v-bind:todo2="item" v-bind:key="item.id"></todo-item>
+            <li v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">{{item.text}}</li>
         </ol>
     </div>   
 </template>
@@ -12,7 +12,7 @@
 
 export default {
     name: 'TodoItem',
-    props:['todo2'],
+    props:['todo'],
     data(){
         return{
             groceryList: [
@@ -22,6 +22,10 @@ export default {
             ]
         }
     },
-    template:`<li> {{ todo2.text }} </li>`
+    mounted(){
+  },
+    setup(props) {
+    console.log(props);
+  },
 }
 </script>
