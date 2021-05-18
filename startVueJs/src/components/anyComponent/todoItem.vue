@@ -1,5 +1,6 @@
 <template>
     <div id="todo-list-app">
+        <h4>템플릿으로 생성</h4>
         <ol>
             <li v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">{{item.text}}</li>
         </ol>
