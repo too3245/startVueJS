@@ -15,11 +15,18 @@
                         <a class="nav-link active" aria-current="page" href="/About">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/appAndCompo">애플리케이션 AND 컴포넌트 인스턴스</a>
+                        <a class="nav-link active" aria-current="page" href="/appAndCompo">컴포넌트 인스턴스</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/template">Template</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/dataType">data속성</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/computed">Computed속성</a>
+                    </li>
+<!-- 
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
                     </li>
@@ -37,6 +44,7 @@
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
+ -->
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
