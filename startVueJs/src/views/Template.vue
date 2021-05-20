@@ -44,6 +44,18 @@
             <div>
                 <form v-on:submit.prevent="onSubmit">...</form>
             </div>
+            <div>
+                <a :bind="url">...</a>
+            </div>
+            <div>
+                <a :[key]="url">...</a>
+            </div>
+            <div>
+                <a @click="doSomething">...</a>
+            </div>
+            <div>
+                <a @[event]="doSomething">...</a>
+            </div>
         </div>
     </div>
 </template>
