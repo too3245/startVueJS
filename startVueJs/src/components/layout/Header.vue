@@ -26,6 +26,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/computed">Computed속성</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/todoTemplate">Todo템플릿</a>
+                    </li>
 <!-- 
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>

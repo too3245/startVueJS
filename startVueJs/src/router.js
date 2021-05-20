@@ -7,6 +7,7 @@ import AppCompo from "./views/AppCompo.vue"
 import Template from "./views/Template.vue"
 import DataType from "./views/DataType.vue"
 import Computed from "./views/Computed.vue"
+import TodoTemplate from "./views/TodoTemplate.vue"
 
 const router = createRouter({
     history: createWebHistory(),
@@ -16,7 +17,8 @@ const router = createRouter({
         {path:"/appAndCompo",component: AppCompo},
         {path:"/template",component: Template},
         {path:"/dataType",component: DataType},
-        {path:"/computed",component: Computed}
+        {path:"/computed",component: Computed},
+        {path:"/todoTemplate", component:TodoTemplate}
     ]
 });
 
