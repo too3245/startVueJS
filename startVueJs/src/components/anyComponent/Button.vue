@@ -12,8 +12,11 @@ export default {
     setup() {
         
     },
-    methods(){
-         
+    methods:{
+        onClick() {
+          this.$emit('toggle-add-task')
+        },
+
     }
 }
 </script>
