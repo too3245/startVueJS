@@ -11,6 +11,7 @@
             <h3>Email: {{ email }}</h3>
             <button @click="getUser" :class="gender">Get Random User</button>
         </div>
+        <Footer />
     </div>    
 </template>
 
@@ -18,7 +19,7 @@
 import TodoHeader from '../components/layout/TodoHeader.vue'
 import Tasks from '../components/anyComponent/Tasks.vue'
 import AddTask from '../components/anyComponent/AddTask.vue'
-
+import Footer from '../components/layout/Footer.vue'
 export default {
     data(){
         return{
@@ -54,23 +55,21 @@ export default {
                 const res = await fetch(`http://localhost:5000/tasks/${id}`,{
                     method: 'DELETE'
                 })
+                console.log('deleteTask',id,res)
                 res.status === 200 ?(this.tasks = this.tasks.filter((task)=> task.id !== id)) : alert('데이터 전송중 오류발생!')
                 
             }
         },
         async toggleReminder(id){
             const taskToToggle = await this.fetchTask(id)
-            const updTask = {...taskToToggle,reminder: !taskToToggle.reminder}
-            console.log('taskToToggle',taskToToggle,id)
-            const res = await fetch(`http://localhost:5000/tasks/${id}`,{
+            const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder }
+            const res = await fetch(`http://localhost:5000/tasks/${id}`, {
                 method: 'PUT',
-                header: {
-                    'Content-type': 'applycation/json'
+                headers: {
+                'Content-type': 'application/json',
                 },
-                body: JSON.stringify(updTask)
+                body: JSON.stringify(updTask),
             })
-            const data = await res.json()
-            this.tasks = this.tasks.map((task)=> task.id === id ? {...task,reminder: !task.reminder}:task)
         },
         async fetchTasks(){
             const res = await fetch('http://localhost:5000/tasks')
@@ -94,7 +93,8 @@ export default {
                 },
                 body: JSON.stringify(task),
             })
-            this.tasks = [...this.tasks, task]
+            const data = await res.json()
+            this.tasks = [...this.tasks, data]
         },
         toggleAddTask(){
             this.showAreaAddTask = !this.showAreaAddTask
@@ -103,7 +103,8 @@ export default {
     components:{
         TodoHeader,
         Tasks,
-        AddTask
+        AddTask,
+        Footer,
     },
     emits:['delete-task','toggle-reminder'],
 }
